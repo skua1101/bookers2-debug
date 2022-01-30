@@ -8,7 +8,7 @@ class BookCommentsController < ApplicationController
       redirect_to book_path(@book)
     else
       @user = @book.user
-      @newbook = Book.new
+      @book_new = Book.new
       render "books/show"
     end
   end
