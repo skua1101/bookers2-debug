@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get :follows, on: :member
       get :followers, on: :member
   end
+  
   resources :books, only: [:index,:show,:edit,:create,:destroy,:update]do
     resource :favorites, only: [:create, :destroy]
      resources :book_comments, only: [:create, :destroy]
