@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'seaches/search'
+  get "searches" => "searches#search"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users, controllers: {
     sessions: 'devise/sessions',
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       get :follows, on: :member
       get :followers, on: :member
   end
-  
+
   resources :books, only: [:index,:show,:edit,:create,:destroy,:update]do
     resource :favorites, only: [:create, :destroy]
      resources :book_comments, only: [:create, :destroy]
