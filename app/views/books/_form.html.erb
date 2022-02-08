@@ -9,6 +9,24 @@
     <%= f.text_area :body, class: "col-xs-12" %>
   </div>
 
+  <!--追加分-->
+  <div class="field" id="star">
+  　<%= f.label :evalution, "星評価：" %>
+  　<%= f.hidden_field :evalution, id: :review_star %>
+  </div>
+
+  <script>
+    $('#star').raty({
+      size     : 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      starHalf: '<%= asset_path('star-half.png') %>',
+      scoreName: 'book[evalution]',
+      half: true,
+    });
+  </script>
+  <!--追加分　終わり-->
+
   <div class="actions row">
     <%= f.submit class: "btn btn-primary col-xs-12" %>
   </div>
